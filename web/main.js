@@ -4,7 +4,10 @@ import { Route, Switch, location } from '@hyperapp/router'
 import { div, main, h1 } from '@hyperapp/html'
 
 import routes from 'App/routes'
-import { init as initDb, makeFx as makeDbFx } from 'App/database'
+import {
+	init as initDb,
+	makeFx as makeDbFx
+} from 'App/database'
 import { put, getAll } from 'App/database/fx'
 
 import 'Style/main.scss'
