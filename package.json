@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@avalander/fun": "^1.0.0-beta.2",
     "@hyperapp/fx": "^0.7.0",
     "@hyperapp/html": "^1.1.1",
     "@hyperapp/router": "^0.7.0",

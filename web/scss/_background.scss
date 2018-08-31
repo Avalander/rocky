@@ -1,0 +1,18 @@
+@each $name, $value in $colors {
+	.bg-#{$name} {
+		background: #{color($name)};
+		color: yiq-color($value);
+	}
+
+	.bg-#{$name}-dark {
+		$color: darken($value, 10%);
+		background: $color;
+		color: yiq-color($color);
+	}
+
+	.bg-#{$name}-darker {
+		$color: darken($value, 20%);
+		background: $color;
+		color: yiq-color($color);
+	}
+}

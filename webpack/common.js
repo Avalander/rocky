@@ -11,7 +11,7 @@ const htmlPage = (folder, name, chunks) =>
 
 module.exports = ({ base_dir, folders }) => ({
 	entry: {
-		main: path.resolve(folders.web, 'main.js'),
+		main: path.resolve(folders.app, 'main.js'),
 	},
 	output: {
 		path: folders.dist,
@@ -89,7 +89,7 @@ module.exports = ({ base_dir, folders }) => ({
 			'node_modules',
 		],
 		alias: {
-			App: folders.web,
+			App: folders.app,
 			Shared: folders.shared,
 			Style: folders.scss,
 		}

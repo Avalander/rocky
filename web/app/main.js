@@ -1,7 +1,7 @@
 import { app } from 'hyperapp'
-import { withFx, action } from '@hyperapp/fx'
+import { withFx } from '@hyperapp/fx'
 import { Route, Switch, location } from '@hyperapp/router'
-import { div, main, h1 } from '@hyperapp/html'
+import { div, main } from '@hyperapp/html'
 
 import routes from 'App/routes'
 import {
@@ -9,6 +9,8 @@ import {
 	makeFx as makeDbFx
 } from 'App/database'
 import { put, getAll } from 'App/database/fx'
+
+import { Toolbar } from 'App/components'
 
 import 'Style/main.scss'
 
@@ -25,7 +27,8 @@ const actions = {
 
 const view = (state, actions) =>
 	div({ key: 'root', oncreate: () => actions.addStuff([ 'app-memories', { name: 'Twilight Sparkle', type: 'unicorn' }]) }, [
-		main({}, [
+		Toolbar(state),
+		main({ class: 'with-fixed-toolbar' }, [
 			Switch({},
 				routes.map(
 					({ path, view }) =>

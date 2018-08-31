@@ -1,20 +1,28 @@
 $fa-font-path: '../../node_modules/font-awesome/fonts';
 @import '~font-awesome/scss/font-awesome';
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,700|Caveat:400,700|Merienda:400,700|Ubuntu+Mono');
+
 @import 'functions';
 @import 'variables';
-@import 'buttons';
 
 $colors: (
 	background: #333333,
 	primary: rgb(50, 146, 55),
 	text: #eaeaea,
+	text-light: #eaeaea,
+	text-dark: #333,
 	info: #406E8E,
 	celadon: #ADF7B6,
 	warning: #FFEE93,
 	danger: #FFC09F,
 	dim-grey: #69626D,
 );
+
+@import 'buttons';
+@import 'form';
+@import 'toolbar';
+@import 'background';
 
 :root {
 	@each $name, $value in $colors {
@@ -23,12 +31,9 @@ $colors: (
 		--color-#{$name}-darker: #{darken($value, 20%)};
 		--color-#{$name}-light: #{lighten($value, 10%)};
 		--color-#{$name}-lighter: #{lighten($value, 20%)};
-		--gradient-#{$name}: #{linear-gradient(135deg, $value, darken($value, 10%))};
+		--gradient-#{$name}: #{linear-gradient(135deg, $value, adjust-hue(darken($value, 10%), 20deg))};
 	}
 }
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,700|Caveat:400,700|Merienda:400,700|Ubuntu+Mono');
-
 
 body {
 	background-color: color(background);
@@ -40,3 +45,5 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Montserrat'
 }
+
+@import 'misc';

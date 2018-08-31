@@ -3,7 +3,7 @@
 		"target": "es6",
 		"baseUrl": "./",
 		"paths": {
-			"App/*": [ "./web/*" ],
+			"App/*": [ "./web/app/*" ],
 			"Lib/*": [ "./node_modules/*" ]
 		}
 	},

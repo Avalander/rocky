@@ -1,0 +1,45 @@
+$toolbar-height: 54px;
+
+.toolbar {
+	background: gradient(primary);
+	font-size: 24px;
+	height: $toolbar-height;
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	z-index: 99;
+	box-shadow: $box-shadow-sm;
+
+	a {
+		text-decoration: none;
+		color: inherit;
+
+		&:visited {
+			color: inherit;
+		}
+	}
+
+	i, span {
+		margin-right: 20px;
+	}
+
+	&.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+	.toolbar-icon {
+		padding: 10px;
+		margin-right: 10px;
+	}
+
+	.toolbar-title {
+		font-family: 'Merienda';
+	}
+}
+
+.with-fixed-toolbar {
+	margin-top: $toolbar-height;
+}
